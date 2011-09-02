@@ -10,7 +10,7 @@ import (
 	"net"
 	"os"
 	"strconv"
-	"url"
+//	"url"
 	"websocket"
 )
 
@@ -33,7 +33,7 @@ func Is(refErr, err os.Error) bool {
 	if werr, ok := err.(*os.PathError); ok { err = werr.Error }
 	if werr, ok := err.(png.IDATDecodingError); ok { err = werr.Err }
 	if werr, ok := err.(*strconv.NumError); ok { err = werr.Error }
-	if werr, ok := err.(*url.Error); ok { err = werr.Error }
+//	if werr, ok := err.(*url.Error); ok { err = werr.Error }
 	if werr, ok := err.(*websocket.DialError); ok { err = werr.Error }
 
 	// In practice, it doesn't matter that os.SyscallError doesn't appear
